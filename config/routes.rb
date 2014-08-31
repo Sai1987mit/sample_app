@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
-  get 'pages/home'
+  
 
-  get 'pages/contact'
+  root 'pages#home'
 
-  get 'pages/about'
-  get 'pages/help'
+  match '/contact', :to => 'pages#contact', :via => [:get]
+  match '/about', :to => 'pages#about', :via => [:get]
+  match '/help', :to => 'pages#help', :via => [:get]
 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+  # You can have the sroot of your site routed with "root"
   # root 'welcome#index'
 
   # Example of regular route:
